@@ -4,6 +4,11 @@ Functions: Define envrionment variables of WEBEX and DNAC.
 Notes: Need to export "WEBEX_TOKEN_BOT" and "DNAC_PASSWORD" in enviroment.
 """
 import os
+import sys
+
+if ("WEBEX_TOKEN_BOT" not in os.environ) or ("DNAC_PASSWORD" not in os.environ):
+    print("Please export WEBEX_TOKEN_BOT and DNAC_PASSWORD in system environment.")
+    sys.exit()
 
 WEBEX = {
   "WEBEX_URL" : "webexapis.com",
